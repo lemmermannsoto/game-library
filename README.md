@@ -1,20 +1,27 @@
-# Biblioteca de Videojuegos
+# Game Library Manager 🎮📖
 
-Backlog personal de PS4/PC, compartido con mi primo.
+Un sistema de gestión por línea de comandos (CLI) construido en Python para organizar y rastrear el estado de una biblioteca de videojuegos multiplataforma. Diseñado para centralizar títulos distribuidos entre consolas de sobremesa, bibliotecas de PC y sistemas de emulación.
 
-**Tecnologías:** Python 3
-**Cómo ejecutar:** `python main.py`
+## 🚀 Características Principales
 
-## Versión 2 POO (Completada) 
+- **Gestión de Estados (Backlog Tracking):** Mantén un control preciso de en qué etapa se encuentra cada juego (`Pendiente/Backlog`, `Jugando`, `Completado`, `Abandonado`).
+- **Filtrado Multicriterio:** Busca rápidamente en tu catálogo por plataforma (ej. `PS4`, `PC`, `PPSSPP`, `RetroArch`) o por género (ej. `Soulslike`, `Roguelite`, `Tactical RPG`).
+- **Persistencia de Datos:** Utiliza estructuras en formato JSON/CSV para guardar tu progreso localmente de forma segura.
 
-El sistema fue refactorizado a Programación Orientada a Objetos (POO). Se separaron las entidades en módulos independientes (juego.py y usuario.py) y se implementó composición.
+## 🗂️ Estructura del Modelo de Datos (Ejemplo)
 
-Próximo paso (V3): Implementar persistencia de datos leyendo y escribiendo archivos JSON.
+El sistema maneja objetos `Juego` instanciados a partir de un archivo de base de datos. Un registro típico luce así:
 
-## Versión 3 — Persistencia de Datos (Completada)
-✔ Arquitectura POO consolidada (Biblioteca → Usuario → Juego)
-✔ Carga automática y autoguardado de datos mediante `json`
-✔ Exportación de reportes de inventario mediante `csv`
-✔ `.gitignore` implementado para proteger datos locales
-
-**Próximo paso (V4):** Migrar el almacenamiento a bases de datos relacionales con SQLite.
+```json
+{
+  "titulo": "Hades",
+  "genero": "Roguelite",
+  "plataforma": "PC",
+  "estado": "Jugando"
+},
+{
+  "titulo": "Persona 5 Royal",
+  "genero": "RPG",
+  "plataforma": "PS4",
+  "estado": "Completado"
+}
